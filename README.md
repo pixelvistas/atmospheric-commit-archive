@@ -7,4 +7,4 @@ A generative visualization mapping weather data to a commit-like radial structur
 - Instability → curvature
 - Memory → opacity
 
-Inspired by Ren Yuan.
+Inspired by Ren Yuan's Git Commit project.
