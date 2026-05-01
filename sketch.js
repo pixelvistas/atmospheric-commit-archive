@@ -306,8 +306,12 @@ function drawArchive() {
 }
 
 function getPos(e, maxRadius) {
-    let angle = map(e.index, 0, events.length, -HALF_PI, TWO_PI - HALF_PI);
+    let baseAngle = map(e.index, 0, events.length, -HALF_PI, TWO_PI - HALF_PI);
 
+    // drift increases over time (breaks symmetry)
+    let drift = map(e.index, 0, events.length, 0, 0.6);
+
+    let angle = baseAngle + drift;
     let intensity = e.intensity;
     if (!isFinite(intensity)) intensity = 1;
 
